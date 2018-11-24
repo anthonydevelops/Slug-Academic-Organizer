@@ -29,29 +29,29 @@
   color: red;
 }
 
-.ais-CurrentRefinements-category{
+.ais-CurrentRefinements-category {
   padding-right: 10px;
 }
 
-button.clear{
+button.clear {
   padding: 5px;
   border-radius: 5px;
 }
 
-.Filters{
+.Filters {
   padding: 10px 0px 10px 0px;
 }
 
-.container{
+.container {
   padding: 10px;
 }
 
-.pages{
+.pages {
   margin: auto;
   width: 50%;
 }
 
-.poweredBy{
+.poweredBy {
   padding: 10px;
   float: right;
 }

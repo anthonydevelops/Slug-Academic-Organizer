@@ -1,25 +1,15 @@
 .content {
-  border-top: 2px solid rgb(255, 255, 255);
-  background-color: transparent;
-  /* background-color: #96b1c3; Grayish blue paragraph background */
-  padding: 20px;
   color: white;
-}
-
-.content h2 {
-  padding: 0;
-  margin: 0;
-}
-
-.content li {
-  margin-bottom: 10px;
+  background-color: transparent;
+  border-top: 2px solid rgb(255, 255, 255);
+  padding: 2rem;
 }
 
 /* LINK ANIMATIONS IN NAVBAR
  * https://codepen.io/martinwolf/pen/eNNdme
  * --------------------------------------------------------
 */
-.home-link,
+
 .link-1,
 .link-2,
 .link-3,
@@ -30,6 +20,14 @@
   display: inline-block;
   color: white !important;
   text-decoration: none;
+}
+
+.home-link {
+  display: inline-block;
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 5px;
 }
 
 /* Home Link */

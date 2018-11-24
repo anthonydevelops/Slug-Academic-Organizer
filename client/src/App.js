@@ -5,7 +5,6 @@ import GERequirements from "./components/GERequirements";
 import Calendar from "./components/Calendar";
 import NavBar from "./components/NavBar";
 import SearchCourse from "./components/SearchCourse";
-import SignIn from "./components/Home";
 import PNPProgress from "./components/PNPProgress";
 import GPACalculator from "./components/GPACalculator";
 import Major from "./components/Major";
@@ -47,8 +46,7 @@ class App extends Component {
           <br />
           <div className="content">
             <Switch>
-              <Route exact path="/" component={SignIn} />
-              <Route path="/logging" component={ClassLogging} />
+              <Route exact path="/" component={ClassLogging} />
               <Route path="/pnp" component={PNPProgress} />
               <Route path="/gpa" component={GPACalculator} />
               <Route path="/ge" component={GERequirements} />

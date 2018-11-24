@@ -32,20 +32,15 @@ export default class NavBar extends Component {
       <div>
         <Navbar color="faded" dark expand="md" role="navigation">
           <div className="home-link">
-            <NavbarBrand tag={Link} to="/" className="mr-auto">
+            <NavbarBrand tag={Link} to="/" className="font-weight-bold mr-auto">
               Slug Organizer
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={this.toggle} className="mr-2" />
           <Collapse isOpen={!this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem className="link-1">
-                <NavLink tag={Link} to="/">
-                  Sign In
-                </NavLink>
-              </NavItem>
+            <Nav className="ml-auto text-justify" navbar>
               <NavItem className="link-2">
-                <NavLink tag={Link} to="/logging">
+                <NavLink tag={Link} to="/">
                   Classes
                 </NavLink>
               </NavItem>
