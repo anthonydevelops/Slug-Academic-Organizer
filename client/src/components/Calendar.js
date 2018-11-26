@@ -19,12 +19,12 @@ export default class Calendar extends Component {
     super(props);
     this.state = {
       events: [],
-	  isLoading: false,
-	  userID: ""
+      isLoading: false,
+      userID: ""
     };
   }
-    componentDidMount() {
-	//get userToken and return courses
+  componentDidMount() {
+    //get userToken and return courses
     const obj = getFromStorage("the_main_app");
     if (obj && obj.token) {
       const { token } = obj;
@@ -66,8 +66,8 @@ export default class Calendar extends Component {
 
     return body;
   };
-  
-   // Post call to the database to get the user classes (from Hannah's code)
+
+  // Post call to the database to get the user classes (from Hannah's code)
   getCalendar = async userID => {
     const response = await fetch("/api/getCalendar", {
       method: "POST",
@@ -86,28 +86,31 @@ export default class Calendar extends Component {
   render() {
     return (
       <div id="calendar">
-        <h1>Class Calendar</h1>
         <FullCalendar
           schedulerLicenseKey="CC-Attribution-NonCommercial-NoDerivatives"
           id="your-custom-ID"
           header={{
             left: "prev,next today",
             center: "title",
-            right: "month,agendaWeek,agendaDay",
+            right: "month,agendaWeek,agendaDay"
           }}
-			//credits @slicedtoad and the community at stackoverflow.com for the filter portion of the code
-			eventRender = {function(event, element) {
-				element.find('.fc-title').append("<br/>" + event.description); 
-				if(event.ranges) {
-					return (event.ranges.filter(function(range) { // test event against all the ranges
-						return (event.start.isBefore(range.end) &&
-						event.end.isAfter(range.start));
-				}).length) > 0; //if it isn't in one of the ranges, don't render it (by returning false)
-			} 
-			else return true;
-		}}
-		  minTime={"08:00"}
-		  maxTime={"23:00"}
+          //credits @slicedtoad and the community at stackoverflow.com for the filter portion of the code
+          eventRender={function(event, element) {
+            element.find(".fc-title").append("<br/>" + event.description);
+            if (event.ranges) {
+              return (
+                event.ranges.filter(function(range) {
+                  // test event against all the ranges
+                  return (
+                    event.start.isBefore(range.end) &&
+                    event.end.isAfter(range.start)
+                  );
+                }).length > 0
+              ); //if it isn't in one of the ranges, don't render it (by returning false)
+            } else return true;
+          }}
+          minTime={"08:00"}
+          maxTime={"23:00"}
           defaultDate={Date.now()}
           navLinks={true}
           editable={true}

@@ -29,17 +29,11 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar
-          color="faded"
-          dark
-          expand="md"
-          role="navigation"
-          className="text-center"
-        >
-          <NavbarToggler onClick={this.toggle} className="mr-2" />
+        <Navbar color="faded" dark expand="md" role="navigation">
+          <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={!this.state.isOpen} navbar>
-            <Nav navbar vertical>
-              <NavItem className="navi-link link-2">
+            <Nav navbar vertical className="mx-auto">
+              <NavItem className="sections planner">
                 <NavLink tag={Link} to="/" active>
                   <div>
                     <ion-icon size="large" name="clipboard" />
@@ -47,7 +41,7 @@ export default class NavBar extends Component {
                   Planner
                 </NavLink>
               </NavItem>
-              <NavItem className="navi-link link-3">
+              <NavItem className="sections calendar">
                 <NavLink tag={Link} to="/calendar" active>
                   <div>
                     <ion-icon size="large" name="calendar" />
@@ -55,7 +49,7 @@ export default class NavBar extends Component {
                   Calendar
                 </NavLink>
               </NavItem>
-              <NavItem className="navi-link link-4">
+              <NavItem className="sections grades">
                 <NavLink tag={Link} to="/grades" active>
                   <div>
                     <ion-icon size="large" name="stats" />
@@ -63,7 +57,7 @@ export default class NavBar extends Component {
                   Grades
                 </NavLink>
               </NavItem>
-              <NavItem className="navi-link link-5">
+              <NavItem className="sections status">
                 <NavLink tag={Link} to="/progress" active>
                   <div>
                     <ion-icon size="large" name="school" />
