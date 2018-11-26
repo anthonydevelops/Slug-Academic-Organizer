@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink as RRNavLink } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -29,12 +29,12 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" dark expand="md" role="navigation">
+        <Navbar color="faded" expand="md" role="navigation">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={!this.state.isOpen} navbar>
             <Nav navbar vertical className="mx-auto">
               <NavItem className="sections planner">
-                <NavLink tag={Link} to="/" active>
+                <NavLink activeClassName="active" tag={RRNavLink} exact to="/">
                   <div>
                     <ion-icon size="large" name="clipboard" />
                   </div>
@@ -42,7 +42,11 @@ export default class NavBar extends Component {
                 </NavLink>
               </NavItem>
               <NavItem className="sections calendar">
-                <NavLink tag={Link} to="/calendar" active>
+                <NavLink
+                  activeClassName="active"
+                  tag={RRNavLink}
+                  to="/calendar"
+                >
                   <div>
                     <ion-icon size="large" name="calendar" />
                   </div>
@@ -50,7 +54,7 @@ export default class NavBar extends Component {
                 </NavLink>
               </NavItem>
               <NavItem className="sections grades">
-                <NavLink tag={Link} to="/grades" active>
+                <NavLink activeClassName="active" tag={RRNavLink} to="/grades">
                   <div>
                     <ion-icon size="large" name="stats" />
                   </div>
@@ -58,7 +62,11 @@ export default class NavBar extends Component {
                 </NavLink>
               </NavItem>
               <NavItem className="sections status">
-                <NavLink tag={Link} to="/progress" active>
+                <NavLink
+                  activeClassName="active"
+                  tag={RRNavLink}
+                  to="/progress"
+                >
                   <div>
                     <ion-icon size="large" name="school" />
                   </div>

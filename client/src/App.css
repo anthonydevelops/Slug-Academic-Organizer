@@ -7,28 +7,19 @@ body {
   height: 100%;
   margin: 0 5%;
   background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #ece9e6,
-    #ffffff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #ece9e6,
-    #ffffff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #ece9e6, #ffffff);
+  background: linear-gradient(to bottom, #ece9e6, #ffffff);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  /* Hannah's colors */
-  /* background: rgb(63, 65, 82); */
-  /* color: white; */
 }
+
 img {
   max-width: 75px;
   max-height: 75px;
-  margin-right: 1rem;
   padding-bottom: 1rem;
+  color: gold !important;
 }
+
 #head-title {
   color: black;
   cursor: default;
@@ -36,27 +27,24 @@ img {
   text-align: left;
   margin-bottom: 2rem;
 }
+
 .cap {
   /* text-transform: uppercase; */
   font-size: 1.5em;
-  color: #34afc7;
+  color: #01589d;
   font-weight: bold;
 }
+
 .full-content {
   margin-bottom: 2rem;
 }
+
 .navs {
   background-color: rgba(0, 0, 0, 0.3);
-  /* border: 1px solid rgba(0, 0, 0, 0.3); */
-  /* border-radius: 10px; */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
 .main {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.3
-  ); /* border: 1px solid rgba(255, 255, 255, 0.3); */ /* border-radius: 10px; */
+  background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
