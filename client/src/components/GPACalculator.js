@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PNP from "./PNPProgress";
 import "../styles/GPACalculator.css";
 import { Alert } from "reactstrap";
 import { getFromStorage } from "./storage";
@@ -156,10 +157,12 @@ class GPACalculator extends Component {
           i < this.state.classes[this.state.year][this.state.quarter].length;
           i++
         ) {
-          units = this.state.classes[this.state.year][this.state.quarter][i].units;
-          grade = this.state.classes[this.state.year][this.state.quarter][i].grade;
+          units = this.state.classes[this.state.year][this.state.quarter][i]
+            .units;
+          grade = this.state.classes[this.state.year][this.state.quarter][i]
+            .grade;
           if (grade !== 13 && grade !== 14 && grade !== 15 && grade !== 16) {
-            total+=units;
+            total += units;
             achieved = achieved + gpaCredits[grade] * units;
           }
         }
@@ -188,74 +191,78 @@ class GPACalculator extends Component {
 
   render() {
     return (
-      <div className="GPACalculator">
-        <header className="GPACalculator-header">
-          <div className="input">
-            <form id="gpaform" onSubmit={this.handleCalculate}>
-              <div className="GPAInfo">
-                <div className="title">
-                  <b>GPA</b>
-                </div>
-                <div className="gpatype">
-                  <select
-                    value={this.state.gpatype}
-                    onChange={this.changeGPAType}
-                    className="gpatype"
-                  >
-                    <option value="0">Cumulative</option>
-                    <option value="1">Quarterly</option>
-                  </select>
-
-                  <div className="quarter">
+      <React.Fragment>
+        <div className="GPACalculator">
+          <header className="GPACalculator-header">
+            <div className="input">
+              <form id="gpaform" onSubmit={this.handleCalculate}>
+                <div className="GPAInfo">
+                  <div className="title">
+                    <b>GPA</b>
+                  </div>
+                  <div className="gpatype">
                     <select
-                      value={this.state.quarter}
-                      onChange={this.changeQuarter}
-                      className="quarter"
-                      disabled={this.gpatype === 0}
+                      value={this.state.gpatype}
+                      onChange={this.changeGPAType}
+                      className="gpatype"
                     >
-                      <option value="0" disabled={this.state.gpatype === 0}>
-                        Fall
-                      </option>
-                      <option value="3" disabled={this.state.gpatype === 0}>
-                        Winter
-                      </option>
-                      <option value="2" disabled={this.state.gpatype === 0}>
-                        Spring
-                      </option>
-                      <option value="1" disabled={this.state.gpatype === 0}>
-                        Summer
-                      </option>
+                      <option value="0">Cumulative</option>
+                      <option value="1">Quarterly</option>
                     </select>
-                    <div className="year">
-                      <input
-                        type="number"
-                        value={this.state.year}
-                        onChange={this.changeYear}
-                        placeholder="Year"
-                        disabled={this.state.gpatype === 0}
-                      />
+
+                    <div className="quarter">
+                      <select
+                        value={this.state.quarter}
+                        onChange={this.changeQuarter}
+                        className="quarter"
+                        disabled={this.gpatype === 0}
+                      >
+                        <option value="0" disabled={this.state.gpatype === 0}>
+                          Fall
+                        </option>
+                        <option value="3" disabled={this.state.gpatype === 0}>
+                          Winter
+                        </option>
+                        <option value="2" disabled={this.state.gpatype === 0}>
+                          Spring
+                        </option>
+                        <option value="1" disabled={this.state.gpatype === 0}>
+                          Summer
+                        </option>
+                      </select>
+                      <div className="year">
+                        <input
+                          type="number"
+                          value={this.state.year}
+                          onChange={this.changeYear}
+                          placeholder="Year"
+                          disabled={this.state.gpatype === 0}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
+              </form>
+              <div>
+                <b>Type = {this.state.gpatype}</b>
               </div>
-            </form>
-            <div>
-              <b>Type = {this.state.gpatype}</b>
+              <button onClick={this.changeGPA}>Calculate</button>
+              <div className="result">
+                <b>{this.state.gpa}</b>
+              </div>
+              <div className="errors">
+                {this.state.yearError.length !== 0 && (
+                  <Alert color="warning">
+                    <b>{this.state.yearError}</b>
+                  </Alert>
+                )}
+              </div>
             </div>
-            <button onClick={this.changeGPA}>Calculate</button>
-            <div className="result">
-              <b>{this.state.gpa}</b>
-            </div>
-            <div className="errors">
-              {this.state.yearError.length !== 0 && (
-                <Alert color="warning">
-                  <b>{this.state.yearError}</b>
-                </Alert>
-              )}
-            </div>
-          </div>
-        </header>
-      </div>
+          </header>
+        </div>
+        <PNP />
+        <div />
+      </React.Fragment>
     );
   }
 }

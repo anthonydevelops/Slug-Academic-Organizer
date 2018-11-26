@@ -4,7 +4,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink
@@ -30,43 +29,46 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" dark expand="md" role="navigation">
-          <div className="home-link">
-            <NavbarBrand tag={Link} to="/" className="font-weight-bold mr-auto">
-              Slug Organizer
-            </NavbarBrand>
-          </div>
+        <Navbar
+          color="faded"
+          dark
+          expand="md"
+          role="navigation"
+          className="text-center"
+        >
           <NavbarToggler onClick={this.toggle} className="mr-2" />
           <Collapse isOpen={!this.state.isOpen} navbar>
-            <Nav className="ml-auto text-justify" navbar>
-              <NavItem className="link-2">
-                <NavLink tag={Link} to="/">
-                  Classes
+            <Nav navbar vertical>
+              <NavItem className="navi-link link-2">
+                <NavLink tag={Link} to="/" active>
+                  <div>
+                    <ion-icon size="large" name="clipboard" />
+                  </div>
+                  Planner
                 </NavLink>
               </NavItem>
-              <NavItem className="link-3">
-                <NavLink tag={Link} to="/pnp">
-                  Pass / No Pass
-                </NavLink>
-              </NavItem>
-              <NavItem className="link-4">
-                <NavLink tag={Link} to="/gpa">
-                  GPA
-                </NavLink>
-              </NavItem>
-              <NavItem className="link-7">
-                <NavLink tag={Link} to="/major">
-                  Major Requirements
-                </NavLink>
-              </NavItem>
-              <NavItem className="link-5">
-                <NavLink tag={Link} to="/ge">
-                  GE
-                </NavLink>
-              </NavItem>
-              <NavItem className="link-6">
-                <NavLink tag={Link} to="/calendar">
+              <NavItem className="navi-link link-3">
+                <NavLink tag={Link} to="/calendar" active>
+                  <div>
+                    <ion-icon size="large" name="calendar" />
+                  </div>
                   Calendar
+                </NavLink>
+              </NavItem>
+              <NavItem className="navi-link link-4">
+                <NavLink tag={Link} to="/grades" active>
+                  <div>
+                    <ion-icon size="large" name="stats" />
+                  </div>
+                  Grades
+                </NavLink>
+              </NavItem>
+              <NavItem className="navi-link link-5">
+                <NavLink tag={Link} to="/progress" active>
+                  <div>
+                    <ion-icon size="large" name="school" />
+                  </div>
+                  Progress
                 </NavLink>
               </NavItem>
             </Nav>

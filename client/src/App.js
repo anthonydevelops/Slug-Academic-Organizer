@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ClassLogging from "./components/ClassLogging";
-import GERequirements from "./components/GERequirements";
+import Planner from "./components/ClassLogging";
 import Calendar from "./components/Calendar";
 import NavBar from "./components/NavBar";
-import SearchCourse from "./components/SearchCourse";
-import PNPProgress from "./components/PNPProgress";
-import GPACalculator from "./components/GPACalculator";
-import Major from "./components/Major";
+import Grades from "./components/GPACalculator";
+import Progress from "./components/Major";
 import "./App.css";
-import "./styles/NavBar.css";
+// import "./styles/NavBar.css";
 
 class App extends Component {
   constructor(props) {
@@ -39,21 +36,24 @@ class App extends Component {
     return (
       //this lets connect to different components of our site
       <Router>
-        <div className="container main">
-          <header>
-            <NavBar />
-          </header>
-          <br />
-          <div className="content">
-            <Switch>
-              <Route exact path="/" component={ClassLogging} />
-              <Route path="/pnp" component={PNPProgress} />
-              <Route path="/gpa" component={GPACalculator} />
-              <Route path="/ge" component={GERequirements} />
-              <Route path="/major" component={Major} />
-              <Route path="/calendar" component={Calendar} />
-              <Route path="/search" component={SearchCourse} />
-            </Switch>
+        <div className="container-fluid main">
+          <div className="row">
+            <div className="home-link col-12">
+              <h1>Slug Organizer</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="navi-col col-2">
+              <NavBar />
+            </div>
+            <div className="content col-10">
+              <Switch>
+                <Route exact path="/" component={Planner} />
+                <Route path="/calendar" component={Calendar} />
+                <Route path="/grades" component={Grades} />
+                <Route path="/progress" component={Progress} />
+              </Switch>
+            </div>
           </div>
         </div>
       </Router>

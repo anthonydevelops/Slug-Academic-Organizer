@@ -1,8 +1,8 @@
 .content {
   color: white;
   background-color: transparent;
-  border-top: 2px solid rgb(255, 255, 255);
-  padding: 2rem;
+  /* border-top: 2px solid rgb(255, 255, 255);
+  padding: 2rem; */
 }
 
 /* LINK ANIMATIONS IN NAVBAR
@@ -10,142 +10,27 @@
  * --------------------------------------------------------
 */
 
-.link-1,
-.link-2,
-.link-3,
-.link-4,
-.link-5,
-.link-6,
-.link-7 {
-  display: inline-block;
-  color: white !important;
-  text-decoration: none;
+/* All Nav Links */
+.navi-link {
+  margin-bottom: 50%;
 }
 
-.home-link {
-  display: inline-block;
-  color: white !important;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 5px;
+.navi-link:visited {
+  color: purple;
 }
 
-/* Home Link */
-.home-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
+.navi-link:hover {
+  color: green;
 }
 
-.home-link:hover::after {
-  width: 100%;
-  transition: width 0.3s;
+.navi-link:active {
+  color: blue;
 }
 
-/* Sign In Link */
-.link-1::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-1:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
-
-/* Class Logging Link */
-.link-2::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-2:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
-
-/* P/NP Link */
-.link-3::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-3:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
-
-/* GPA Link */
-.link-4::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-4:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
-
-/* GE Req Link */
-.link-5::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-5:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
+/* Planner Link */
 
 /* Calendar Link */
-.link-6::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
 
-.link-6:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
+/* Grades Link */
 
-/* Calendar Link */
-.link-7::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.link-7:hover::after {
-  width: 100%;
-  transition: width 0.3s;
-}
+/* Progress Link */
