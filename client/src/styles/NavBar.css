@@ -7,18 +7,28 @@
 .sections {
   text-align: center;
   margin-bottom: 50%;
-  border-bottom: 7px solid white;
-  border-radius: 5%;
 }
 
 .nav-link {
+  display: inline-block;
   color: white;
+  text-decoration: none;
 }
 
 .nav-link:hover {
   color: white;
 }
 
-.nav-item:hover {
-  border-color: black;
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  /* transition: width .3s; */
 }
