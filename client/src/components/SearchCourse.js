@@ -167,32 +167,32 @@ class Search extends Component {
         <SearchBox />
         <h3>Filters</h3>
         <CollapsibleComponent>
-          <CollapsibleHead>Career</CollapsibleHead>
+          <CollapsibleHead className="change">Career</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="meta.career" />
           </CollapsibleContent>
 
-          <CollapsibleHead>Type</CollapsibleHead>
+          <CollapsibleHead className="change">Type</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="meta.type" />
           </CollapsibleContent>
 
-          <CollapsibleHead>Credits</CollapsibleHead>
+          <CollapsibleHead className="change">Credits</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="meta.credits" />
           </CollapsibleContent>
 
-          <CollapsibleHead>Status</CollapsibleHead>
+          <CollapsibleHead className="change">Status</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="meta.status" />
           </CollapsibleContent>
 
-          <CollapsibleHead>Days</CollapsibleHead>
+          <CollapsibleHead className="change">Days</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="lecture.days" />
           </CollapsibleContent>
 
-          <CollapsibleHead>Meeting Dates</CollapsibleHead>
+          <CollapsibleHead className="change">Meeting Dates</CollapsibleHead>
           <CollapsibleContent>
             <RefinementList attribute="lecture.meetingDates" />
           </CollapsibleContent>

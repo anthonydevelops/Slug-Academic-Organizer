@@ -4,6 +4,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
+  NavbarBrand,
   Nav,
   NavItem,
   NavLink
@@ -30,7 +31,8 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar color="faded" expand="md" role="navigation">
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarBrand href="/" className="mr-auto" />
+          <NavbarToggler onClick={this.toggle} className="mr-2" />
           <Collapse isOpen={!this.state.isOpen} navbar>
             <Nav navbar vertical className="mx-auto">
               <NavItem className="sections planner">

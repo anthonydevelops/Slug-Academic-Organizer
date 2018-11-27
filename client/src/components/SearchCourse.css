@@ -4,7 +4,7 @@
 }
 
 .ais-ClearRefinements-button {
-  color: red;
+  color: #01589d;
 }
 
 .ais-CurrentRefinements-item {
@@ -54,4 +54,12 @@ button.clear {
 .poweredBy {
   padding: 10px;
   float: right;
+}
+
+.change {
+  background-color: #01589d !important;
+}
+
+.change:hover {
+  background-color: #a8a6a4 !important;
 }
